@@ -56,7 +56,7 @@
     let empwages=empHr*WAGE_PER_HR;
     console.log("UC3 implimented functions:Dailywage is:" +empwages);
 
-    //UC4
+    //UC4 Calculate Wages for a month
     //Constants
     const NUM_OF_WORKING_DAYS=20;
     let totalEmpWage=0;
@@ -70,9 +70,23 @@
     }
     console.log("UC4:TototalEmpWage for"+NUM_OF_WORKING_DAYS+"days:" +totalEmpWage);
     
+    //UC5- Calculating wages till number of working days or total working hours per month
+    //Constants
+    const MAX_HRS_IN_MONTH =160;
+    const NUM_OF_WORKING_DAYS =20;
+    let totalEmpHrs=0;
+    let totalWorkingDays=0;
+    while(totalEmpHrs<MAX_HRS_IN_MONTH && totalWorkingDays<NUM_OF_WORKING_DAYS)
+    {
+        totalWorkingDays++;
+        let empCheck = Math.floor(Math.random()*10)%3;
+        totalEmpHrs += getWorkingHrs(empCheck);
+    }
+    let EmpWage = totalEmpHrs*WAGE_PER_HR;
+    console.log("UC5 :Total working days  : "+totalWorkingDays+"Total hours : "+totalEmpHrs+" employee wage : " + empWage);
+    
 
 
- 
 
 
 
