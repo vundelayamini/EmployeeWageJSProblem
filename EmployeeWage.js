@@ -56,6 +56,21 @@
     let empwages=empHr*WAGE_PER_HR;
     console.log("UC3 implimented functions:Dailywage is:" +empwages);
 
+    //UC4
+    //Constants
+    const NUM_OF_WORKING_DAYS=20;
+    let totalEmpWage=0;
+    
+    for(let i=0;i<NUM_OF_WORKING_DAYS;i++)
+    {
+        let empCheck=Math.floor(Math.random()*10)%3;
+        let empHr=getWorkingHrs(empCheck);
+        let empWages=empHr*WAGE_PER_HR;
+        totalEmpWage+=empWages;
+    }
+    console.log("UC4:TototalEmpWage for"+NUM_OF_WORKING_DAYS+"days:" +totalEmpWage);
+    
+
 
  
 
