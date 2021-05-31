@@ -1,4 +1,4 @@
-EmployeeWage.js
+
 //UC1 Ability to check Employees is present or absent.
 //Constants
 
@@ -86,7 +86,7 @@ EmployeeWage.js
     let EmpWage = totalEmpHrs*WAGE_PER_HR;
     console.log("UC5 :Total working days  : "+totalWorkingDays+"Total hours : "+totalEmpHrs+" employee wage : " + empWage);
  
-    //UC6- Calculating wages till number of working days or total working hours per month
+    //UC6- Store the Daily Wage along with the Total Wage and storing into array
     //Constants
     const MAX_HRS_IN_MONTH =160;
     const NUM_OF_WORKING_DAYS =20;
