@@ -1,3 +1,4 @@
+
 //UC1 Ability to check Employees is present or absent.
 //Constants
 
@@ -176,3 +177,45 @@
    {
        return empHrs * WAGE_PER_HOUR;
    }
+   //UC8 Store the Day and the Daily Wage along with the Total Wage using map.
+   console.log("UC 8\nContents of the map:")
+   console.log(empDailyWageMap);
+   console.log("Total wage using emp wage map: "+Array.from(empDailyWageMap.values()).reduce(totalWages));
+    //9A - Calculate Total Wage and Total Hours Worked
+     let findTotal = (totalVal, dailyVal) => {
+    return totalVal + dailyVal;
+    }
+     let count = 0;
+     let totalHours = Array.from(empDailyHrsMap.values()).reduce(findTotal, 0);
+     let totalSalary = empDailyWageArray.filter(dailyWage => dailyWage > 0).reduce(findTotal, 0);
+     console.log("Employee Wage with Arrow => " + " Total Hours => " + totalHours + " Total Wages => " + totalSalary);
+
+    //9B - Show the full working days, part working days and no working days
+    let nonWorkingDays = new Array();
+    let partWorkingDays = new Array();
+    let fullWorkingDays = new Array();
+
+    empDailyHrsMap.forEach((value, key) => {
+    if (value == 8) fullWorkingDays.push(key);
+    else if (value == 4) partWorkingDays.push(key);
+    else nonWorkingDays.push(key); 
+  });
+    console.log("Full Working Days : " + fullWorkingDays);
+    console.log("Part Working Days : " + partWorkingDays);
+    console.log("NonWorking Days : " + nonWorkingDays);
+
+
+    function GetWorkingHrs(empCheck) {
+       switch (empCheck) 
+       {
+            case IS_PRESENT_FULL_TIME:
+                   return FULL_TIME_HOURS;
+            case IS_PRESENT_PART_TIME:
+                    return PART_TIME_HOURS;
+            default:
+                return 0;
+        }
+    }
+    
+
+    
