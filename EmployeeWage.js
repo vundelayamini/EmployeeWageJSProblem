@@ -1,3 +1,4 @@
+EmployeeWage.js
 //UC1 Ability to check Employees is present or absent.
 //Constants
 
@@ -84,9 +85,35 @@
     }
     let EmpWage = totalEmpHrs*WAGE_PER_HR;
     console.log("UC5 :Total working days  : "+totalWorkingDays+"Total hours : "+totalEmpHrs+" employee wage : " + empWage);
-    
+ 
+    //UC6- Calculating wages till number of working days or total working hours per month
+    //Constants
+    const MAX_HRS_IN_MONTH =160;
+    const MAX_DAYS =20;
 
+    let totalWorkingHrs=0;
+    let totalDays=1;
+    //Creating new array
+    let empWageArray=new Array();
+    function GetDailyWage(empHr)
+    {
+        return empHr*WAGE_PER_HR;
 
+    }
 
+    while(totalWorkingHrs<MAX_HRS_IN_MONTH && totalDays<NUM_OF_WORKING_DAYS)
+    {
+        let empCheck = Math.floor(Math.random()*10)%3;
+        let empHr=getWorkingHrs(empCheck);
+        empWageArray.push(GetDailyWage(empHr));
+        totalWorkingHrs+=empHr;
+        totalDays++;
 
-
+    }
+    let totalWages = totalWorkingHrs*WAGE_PER_HR;
+    console.log("UC6 Array concept:");
+    for(let wage of empWageArray)
+    {
+        console.log(wage);
+    }
+ 
