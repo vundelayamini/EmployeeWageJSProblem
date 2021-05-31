@@ -1,4 +1,3 @@
-EmployeeWage.js
 //UC1 Ability to check Employees is present or absent.
 //Constants
 
